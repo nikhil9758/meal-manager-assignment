@@ -2,13 +2,13 @@
 import React, { Suspense, lazy } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
-const HomePage = lazy(() => import('./containers/HomePage/HomePage'));
-const MenuPage = lazy(() => import('./containers/MenuPage/MenuPage'));
-const MealsPage = lazy(() => import('./containers/MealsPage/MealsPage'));
-const FavouritesPage = lazy(() => import('./containers/FavouritesPage/FavouritesPage'));
-const MealGeneratorPage = lazy(() => import('./containers/MealGeneratorPage/MealGeneratorPage'));
-const AboutMePage = lazy(() => import('./containers/AboutMePage/AboutMePage'));
-const NotFoundPage = lazy(() => import('./containers/NotFoundPage/NotFoundPage'));
+const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+const MenuPage = lazy(() => import('./pages/MenuPage/MenuPage'));
+const MealsPage = lazy(() => import('./pages/MealsPage/MealsPage'));
+const FavouritesPage = lazy(() => import('./pages/FavouritesPage/FavouritesPage'));
+const MealGeneratorPage = lazy(() => import('./pages/MealGeneratorPage/MealGeneratorPage'));
+const AboutMePage = lazy(() => import('./pages/AboutMePage/AboutMePage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage'));
 
 const router = createBrowserRouter([
   {
