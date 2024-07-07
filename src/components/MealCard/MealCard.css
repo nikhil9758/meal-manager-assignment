@@ -1,0 +1,89 @@
+.meal-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 37px;
+  background-color: #f9f9f9;
+}
+  
+.meal-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+
+.meal-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.meal-details h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.meal-details button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.meal-details button:hover {
+  background-color: #0056b3;
+}
+
+.heart-icon {
+  position: absolute;
+  right: 115px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.filled-heart {
+  color: red;
+  font-size: 24px;
+}
+
+.empty-heart {
+  color: gray;
+  font-size: 24px;
+}
+
+
+/* Random meal layout */
+.meal-card.random {
+  flex-direction: column;
+  width: 58%;
+  text-align: center;
+  position: relative;
+}
+
+.meal-card.random .meal-image {
+  width: 97%;
+  height: 235px;
+  border-radius: 8px 8px 0 0;
+  margin-right: 0;
+}
+
+.meal-card.random .meal-details {
+  width: 100%;
+  padding: 16px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal-card.random .heart-icon {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
