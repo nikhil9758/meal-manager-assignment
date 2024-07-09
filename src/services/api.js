@@ -1,24 +1,49 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const fetchMealsFromApi = async () => {
-  const response = await axios.get(
-    "https://www.themealdb.com/api/json/v1/1/categories.php"
-  );
-  return response.data.categories;
+  try {
+    const response = await axios.get(
+      'https://www.themealdb.com/api/json/v1/1/categories.php'
+    );
+    if (response.data && response.data.categories) {
+      return response.data.categories;
+    } else {
+      throw new Error('No categories found in response.');
+    }
+  } catch (error) {
+    console.error('Error fetching meals:', error.message);
+    throw new Error('Failed to fetch meal categories. Please try again later.');
+  }
 };
 
 export const fetchMealsByCategoryFromApi = async (category) => {
-  const response = await fetch(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
-  );
-  const data = await response.json();
-  return data.meals;
+  try {
+    const response = await axios.get(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+    );
+    if (response.data && response.data.meals) {
+      return response.data.meals;
+    } else {
+      throw new Error('No meals found for the selected category.');
+    }
+  } catch (error) {
+    console.error('Error fetching meals by category:', error.message);
+    throw new Error('Failed to fetch meals by category. Please try again later.');
+  }
 };
 
 export const fetchRandomMealFromApi = async () => {
-  const response = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/random.php"
-  );
-  const data = await response.json();
-  return data.meals[0];
+  try {
+    const response = await axios.get(
+      'https://www.themealdb.com/api/json/v1/1/random.php'
+    );
+    if (response.data && response.data.meals && response.data.meals[0]) {
+      return response.data.meals[0];
+    } else {
+      throw new Error('No random meal found.');
+    }
+  } catch (error) {
+    console.error('Error fetching random meal:', error.message);
+    throw new Error('Failed to fetch a random meal. Please try again later.');
+  }
 };
